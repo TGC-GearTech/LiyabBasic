@@ -2,6 +2,8 @@
 
 #include <LiyabBasic.h>
 
+#define knob A2
+
 void setup() {
   Liyab_Init();
   OK();
