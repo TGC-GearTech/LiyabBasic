@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "LiyabBasic.h"
 
-#define knob A2
+#define knob analogRead(A2)
 #define buzzer 2
 // Initialization function
 void Liyab_Init() {
