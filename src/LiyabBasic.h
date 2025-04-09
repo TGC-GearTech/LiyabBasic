@@ -6,6 +6,8 @@
 
 #include "Arduino.h"
 
+#define knob A2
+#define buzzer 2
 // Function prototypes
 void Liyab_Init();
 void OK();
