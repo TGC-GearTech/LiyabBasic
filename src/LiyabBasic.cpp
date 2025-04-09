@@ -45,6 +45,12 @@ void motor(uint8_t pin, int speed) {
       digitalWrite(8, LOW);  
       digitalWrite(7, HIGH);
     }
+
+    if (speed == 0) {
+      analogWrite(9, 0);
+      digitalWrite(8, LOW);
+      digitalWrite(7, LOW);
+    }
   }
 
   if (pin == 2) {  // Motor 2 control
@@ -60,6 +66,12 @@ void motor(uint8_t pin, int speed) {
       analogWrite(10, spd);  
       digitalWrite(11, LOW);  
       digitalWrite(12, HIGH);
+    }
+
+    if (speed == 0) {
+      analogWrite(10, 0);
+      digitalWrite(11, LOW);
+      digitalWrite(12, LOW);
     }
   }
 }
