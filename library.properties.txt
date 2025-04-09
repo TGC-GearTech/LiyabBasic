@@ -1,0 +1,9 @@
+name=LiyabBasic
+version=1.0.0
+author=John David Golenia
+maintainer=John David Golenia <goleniajohndavid11@gmail.com>
+sentence=Library for Liyab Basic Microcontroller
+paragraph=This library facilitates the use of the Liyab Basic Microcontroller produced by GearTech Robots Trading, making robotics more user-friendly for beginners.
+category=Uncategorized
+url=https://github.com/TGC-GearTech/LiyabBasic
+architectures=*
