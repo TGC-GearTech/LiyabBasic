@@ -1,11 +1,13 @@
 #include "Arduino.h"
 #include "LiyabBasic.h"
 
+#define knob A2
+#define buzzer 2
 // Initialization function
 void Liyab_Init() {
   Serial.begin(9600);
 
-  pinMode(2, OUTPUT);  // Buzzer pin
+  pinMode(buzzer, OUTPUT);  // Buzzer pin
 
   pinMode(9, OUTPUT);  
   pinMode(8, OUTPUT);  
@@ -15,8 +17,8 @@ void Liyab_Init() {
   pinMode(12, OUTPUT); 
 
   // Play a sound on the buzzer
-  tone(2, 1250, 350);
-  tone(2, 1250, 350);
+  tone(buzzer, 1250, 350);
+  tone(buzzer, 1250, 350);
 }
 
 // Function to wait until a button is pressed
