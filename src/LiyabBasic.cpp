@@ -78,8 +78,10 @@ void motor(uint8_t pin, int speed) {
 
 void forward(int speedL, int speedR)
 {
-  analogWrite(9, speedL);  
-  analogWrite(10, speedR); 
+  int spdL = map(speedL, 0, 100, 0, 255);
+  int spdR = map(speedR, 0, 100, 0, 255);
+  analogWrite(9, spdL);  
+  analogWrite(10, spdR); 
   digitalWrite(8, HIGH); 
   digitalWrite(7, LOW);
   digitalWrite(11, HIGH); 
@@ -88,8 +90,10 @@ void forward(int speedL, int speedR)
 
 void backward(int speedL, int speedR)
 {
-  analogWrite(9, speedL);  
-  analogWrite(10, speedR); 
+  int spdL = map(speedL, 0, 100, 0, 255);
+  int spdR = map(speedR, 0, 100, 0, 255);
+  analogWrite(9, spdL);  
+  analogWrite(10, spdR); 
   digitalWrite(8, LOW); 
   digitalWrite(7, HIGH);
   digitalWrite(11, LOW); 
@@ -98,8 +102,10 @@ void backward(int speedL, int speedR)
 
 void spin_right(int speedL, int speedR)
 {
-  analogWrite(9, speedL);  
-  analogWrite(10, speedR); 
+  int spdL = map(speedL, 0, 100, 0, 255);
+  int spdR = map(speedR, 0, 100, 0, 255);
+  analogWrite(9, spdL);  
+  analogWrite(10, spdR); 
   digitalWrite(8, HIGH); 
   digitalWrite(7, LOW);
   digitalWrite(11, LOW); 
@@ -108,8 +114,10 @@ void spin_right(int speedL, int speedR)
 
 void spin_left(int speedL, int speedR)
 {
-  analogWrite(9, speedL);  
-  analogWrite(10, speedR); 
+  int spdL = map(speedL, 0, 100, 0, 255);
+  int spdR = map(speedR, 0, 100, 0, 255);
+  analogWrite(9, spdL);  
+  analogWrite(10, spdR); 
   digitalWrite(8, LOW); 
   digitalWrite(7, HIGH);
   digitalWrite(11, HIGH); 
@@ -118,7 +126,8 @@ void spin_left(int speedL, int speedR)
 
 void turn_right(int speed)
 {
-  analogWrite(9, speed);  
+  int spd = map(speed, 0, 100, 0, 255);
+  analogWrite(9, spd);  
   analogWrite(10, 0); 
   digitalWrite(8, HIGH); 
   digitalWrite(7, LOW);
@@ -128,8 +137,9 @@ void turn_right(int speed)
 
 void turn_left(int speed)
 {
+  int spd = map(speed, 0, 100, 0, 255);
   analogWrite(9, 0);  
-  analogWrite(10, speed); 
+  analogWrite(10, spd); 
   digitalWrite(8, LOW); 
   digitalWrite(7, LOW);
   digitalWrite(11, HIGH); 
