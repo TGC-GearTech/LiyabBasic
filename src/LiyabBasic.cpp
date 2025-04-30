@@ -76,6 +76,66 @@ void motor(uint8_t pin, int speed) {
   }
 }
 
+void forward(int speedL, int speedR)
+{
+  analogWrite(9, speedL);  
+  analogWrite(10, speedR); 
+  digitalWrite(8, HIGH); 
+  digitalWrite(7, LOW);
+  digitalWrite(11, HIGH); 
+  digitalWrite(12, LOW);
+}
+
+void backward(int speedL, int speedR)
+{
+  analogWrite(9, speedL);  
+  analogWrite(10, speedR); 
+  digitalWrite(8, LOW); 
+  digitalWrite(7, HIGH);
+  digitalWrite(11, LOW); 
+  digitalWrite(12, HIGH);
+}
+
+void spin_right(int speedL, int speedR)
+{
+  analogWrite(9, speedL);  
+  analogWrite(10, speedR); 
+  digitalWrite(8, HIGH); 
+  digitalWrite(7, LOW);
+  digitalWrite(11, LOW); 
+  digitalWrite(12, HIGH);
+}
+
+void spin_left(int speedL, int speedR)
+{
+  analogWrite(9, speedL);  
+  analogWrite(10, speedR); 
+  digitalWrite(8, LOW); 
+  digitalWrite(7, HIGH);
+  digitalWrite(11, HIGH); 
+  digitalWrite(12, LOW);
+}
+
+void turn_right(int speed)
+{
+  analogWrite(9, speed);  
+  analogWrite(10, 0); 
+  digitalWrite(8, HIGH); 
+  digitalWrite(7, LOW);
+  digitalWrite(11, LOW); 
+  digitalWrite(12, LOW);
+}
+
+void turn_left(int speed)
+{
+  analogWrite(9, 0);  
+  analogWrite(10, speed); 
+  digitalWrite(8, LOW); 
+  digitalWrite(7, LOW);
+  digitalWrite(11, HIGH); 
+  digitalWrite(12, LOW);
+}
+
 // Stop both motors
 void motor_stop() {
   analogWrite(9, 0);  
