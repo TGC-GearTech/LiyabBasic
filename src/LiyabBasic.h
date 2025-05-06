@@ -7,6 +7,8 @@
 #include "Arduino.h"
 #include "Adafruit_SSD1306.h"
 #include "Adafruit_GFX.h"
+#include "Wire.h"
+#include "SPI.h"
 
 // Function prototypes
 void Liyab_Init();
