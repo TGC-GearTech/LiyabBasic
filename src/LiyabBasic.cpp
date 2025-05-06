@@ -5,7 +5,7 @@
 #include "Wire.h"
 #include "SPI.h"
 
-extern Adafruit_SSD1306 oled;
+Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 #define LOGO_HEIGHT   16
 #define LOGO_WIDTH    16
