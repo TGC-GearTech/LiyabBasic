@@ -10,7 +10,7 @@
 
 #define OLED_RESET -1
 #define SCREEN_ADDRESS 0x3C
-Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+extern Adafruit_SSD1306 oled;
 
 #define LOGO_HEIGHT   16
 #define LOGO_WIDTH    16
