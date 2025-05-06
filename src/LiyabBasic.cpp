@@ -51,7 +51,7 @@ void Liyab_Init() {
   oled.setTextColor(SSD1306_WHITE);
   oled.setCursor(0, 25);
   oled.println(F("Press    to Start"));
-  oled.drawBitmap(33, 18,logo2_bmp, 16, 16, 1);
+  oled.drawBitmap(33, 18,logo1_bmp, 16, 16, 1);
   oled.display();
 }
 
