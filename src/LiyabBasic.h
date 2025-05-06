@@ -1,5 +1,6 @@
 /* Liyab Basic Microcontroller Library */
 /* Written by GearTech Robots Trading */
+#pragma once
 
 #ifndef LiyabBasic_h 
 #define LiyabBasic_h 
@@ -15,7 +16,8 @@
 
 #define OLED_RESET -1
 #define SCREEN_ADDRESS 0x3C
-Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+extern Adafruit_SSD1306 oled;
+
 
 // Function prototypes
 void Liyab_Init();
