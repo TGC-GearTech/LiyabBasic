@@ -2,7 +2,7 @@
 
 #include <LiyabBasic.h>
 
-#define knob A2
+#define knob A7
 
 void setup() {
   Liyab_Init();
