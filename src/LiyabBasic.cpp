@@ -67,8 +67,6 @@ void OK() {
   }
 }
 
-void 
-
 // Motor control function
 void motor(uint8_t pin, int speed) {
   if (pin == 1) {  
