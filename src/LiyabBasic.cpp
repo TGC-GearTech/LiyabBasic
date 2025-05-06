@@ -62,9 +62,9 @@ void OK() {
     digitalWrite(13, LOW);
     delay(100);
     digitalWrite(13, HIGH);
-    oled.clearDisplay();
-    oled.display();
   }
+  oled.clearDisplay();
+  oled.display();
 }
 
 // Motor control function
