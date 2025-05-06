@@ -9,9 +9,6 @@
 #include "Adafruit_GFX.h"
 #include "Wire.h"
 #include "SPI.h"
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-#include <LiyabBasic.h>
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 32
