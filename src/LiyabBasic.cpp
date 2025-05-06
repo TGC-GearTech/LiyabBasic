@@ -1,5 +1,25 @@
 #include "Arduino.h"
 #include "LiyabBasic.h"
+#include "Adafruit_SSD1306.h"
+#include "Adafruit_GFX.h"
+#include "Wire.h"
+#include "SPI.h"
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 32
+
+#define OLED_RESET -1
+#define SCREEN_ADDRESS 0x3C
+Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+#define LOGO_HEIGHT   16
+#define LOGO_WIDTH    16
+
+static const unsigned char PROGMEM logo1_bmp[] =
+{
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0xFC, 0x40, 0x02, 0x4E, 0x4A, 0x51, 0x52,
+  0x51, 0x62, 0x51, 0x52, 0x4E, 0x4A, 0x40, 0x02, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00
+};
 
 // Initialization function
 void Liyab_Init() {
@@ -17,6 +37,22 @@ void Liyab_Init() {
   // Play a sound on the buzzer
   tone(2, 1250, 350);
   tone(2, 1250, 350);
+  
+  if(!oled.begin(SSD1306_RIGHT_HORIZONTAL_SCROLL, SCREEN_ADDRESS)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); // Don't proceed, loop forever
+  }
+  oled.clearDisplay();
+  oled.setTextSize(2);
+  oled.setTextColor(SSD1306_WHITE);
+  oled.setCursor(0, 3);
+  oled.println(F("LIYAB-01"));
+  oled.setTextSize(1);
+  oled.setTextColor(SSD1306_WHITE);
+  oled.setCursor(0, 25);
+  oled.println(F("Press    to Start"));
+  oled.drawBitmap(33, 18,logo2_bmp, 16, 16, 1);
+  oled.display();
 }
 
 // Function to wait until a button is pressed
@@ -26,8 +62,12 @@ void OK() {
     digitalWrite(13, LOW);
     delay(100);
     digitalWrite(13, HIGH);
+    oled.clearDisplay();
+    oled.display();
   }
 }
+
+void 
 
 // Motor control function
 void motor(uint8_t pin, int speed) {
