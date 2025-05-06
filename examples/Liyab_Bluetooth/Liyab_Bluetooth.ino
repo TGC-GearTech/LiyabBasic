@@ -19,64 +19,63 @@ void setup()  {
 }
 
 void loop() {
-  if (mySerial.available() > 0)
-  {
-    char command = mySerial.read();
-    Serial.println(command);
-
-    if (command == 'F')
+    if (mySerial.available() > 0)
     {
-      motor(1, 100);
-      motor(2, 100);
-    }
+        char command = mySerial.read();
+        Serial.println(command);
+        
+        if (command == 'F')
+        {
+            motor(1, 100);
+            motor(2, 100);
+        }
+        
+        if (command == 'B')
+        {
+            motor(1, -100);
+            motor(2, -100);
+        }
+        
+        if (command == 'L')
+        {
+            motor(1, -100);
+            motor(2, 100);
+        }
 
-    if (command == 'B')
-    {
-      motor(1, -100);
-      motor(2, -100);
+        if (command == 'R')
+        {
+            motor(1, 100);
+            motor(2, -100);
+        }
+        
+        if (command == 'I')
+        {
+            motor(1, 100);
+            motor(2, 0);
+        }
+        
+        if (command == 'G')
+        {
+            motor(1, 0);
+            motor(2, 100);
+        }
+        
+        if (command == 'H')
+        {
+            motor(1, 0);
+            motor(2, -100);
+        }
+        
+        if (command == 'J')
+        {
+            motor(1, -100);
+            motor(2, 0);
+        }
+        
+        if (command == 'S')
+        {
+            motor(1, 0);
+            motor(2, 0);
+        }
     }
-
-    if (command == 'L')
-    {
-      motor(1, -100);
-      motor(2, 100);
-    }
-
-    if (command == 'R')
-    {
-      motor(1, 100);
-      motor(2, -100);
-    }
-    
-    if (command == 'I')
-    {
-      motor(1, 100);
-      motor(2, 0);
-    }
-
-    if (command == 'G')
-    {
-      motor(1, 0);
-      motor(2, 100);
-    }
-
-    if (command == 'H')
-    {
-      motor(1, 0);
-      motor(2, -100);
-    }
-
-    if (command == 'J')
-    {
-      motor(1, -100);
-      motor(2, 0);
-    }
-
-    if (command == 'S')
-    {
-      motor(1, 0);
-      motor(2, 0);
-    }
-  }
-
 }
