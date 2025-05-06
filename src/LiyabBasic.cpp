@@ -164,9 +164,9 @@ void spin_left(int speedL, int speedR)
   digitalWrite(12, LOW);
 }
 
-void turn_right(int speed)
+void turn_right(int speedR)
 {
-  int spd = map(speed, 0, 100, 0, 255);
+  int spd = map(speedR, 0, 100, 0, 255);
   analogWrite(9, spd);  
   analogWrite(10, 0); 
   digitalWrite(8, HIGH); 
@@ -175,9 +175,9 @@ void turn_right(int speed)
   digitalWrite(12, LOW);
 }
 
-void turn_left(int speed)
+void turn_left(int speedL)
 {
-  int spd = map(speed, 0, 100, 0, 255);
+  int spd = map(speedL, 0, 100, 0, 255);
   analogWrite(9, 0);  
   analogWrite(10, spd); 
   digitalWrite(8, LOW); 
